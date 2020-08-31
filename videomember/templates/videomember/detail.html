@@ -1,5 +1,8 @@
 {% extends 'videomember/base.html' %}
 {% block content %}
+	{% if user.is_authenticated %}
+	<p>Welcome {{user.username}}! </p>
+	{% endif %}
 	{% for lesson in lessons %}
 		<h1><a href="{% url 'videomember:lesson' lesson.id %}" title="">{{lesson.lesson}}</a></h1>
 	{% endfor %}

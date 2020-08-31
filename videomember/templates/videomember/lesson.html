@@ -1,5 +1,8 @@
 {% extends 'videomember/base.html' %}
 {% block content %}
+	{% if user.is_authenticated %}
+	<p>Welcome {{user.username}}! </p>
+	{% endif %}
 	<h1>{{lesson.lesson}}</h1>
 	<p>{{lesson.description}}</p>
 {% endblock %}
