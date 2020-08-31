@@ -1,0 +1,20 @@
+{% extends 'videomember/base.html' %}
+{% block content %}
+		<!-- Courses here -->
+		<div class="row">
+			{% for course in courses %}
+			<div class="col-md-4">
+			  <div class="card-body">
+			  	<img class="card-img-top" src="/media/{{course.image}}" alt="Card image">
+			    <h4 class="card-title my-3">{{course.title}}</h4>
+			    <p class="card-text">{{course.description}}</p>
+			    <p class="card-text font-weight-bold">Price: ${{course.price}}</p>
+			    <a href="{% url 'videomember:detail' course.id %}" class="btn btn-dark">Join Now</a>
+			  </div>
+			</div>	
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+</body>
+</html>

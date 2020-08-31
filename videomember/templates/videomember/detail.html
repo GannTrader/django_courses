@@ -1,0 +1,6 @@
+{% extends 'videomember/base.html' %}
+{% block content %}
+	{% for lesson in lessons %}
+		<h1><a href="{% url 'videomember:lesson' lesson.id %}" title="">{{lesson.lesson}}</a></h1>
+	{% endfor %}
+{% endblock %}
